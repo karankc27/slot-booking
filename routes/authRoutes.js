@@ -71,6 +71,15 @@ router.post("/login",(req,res)=>{
   const email=req.body.email;
   const password=req.body.password;
   console.log(email);
+  var all_bookings;
+  Bookings.find({})
+    .sort({
+      date: "descending"
+    })
+    .exec()
+    .then(function(results) {
+        all_bookings=results;    
+    });
   User.findOne({email: email})
   .then(user => {
     if(!user){
@@ -86,7 +95,7 @@ router.post("/login",(req,res)=>{
         req.session.isLoggedIn=true;
         req.session.user=user;
         return req.session.save(err =>{
-
+          
           console.log("Logged In");
           return res.render("home",{
               successMessage:"Login Successfull!",
