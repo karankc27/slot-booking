@@ -1,0 +1,76 @@
+.LoginMain h2
+{
+    
+    background-color:#292b2c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+    width: 70%;
+    margin:auto;
+    
+    
+}
+.LoginRow
+{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    
+}
+.LoginMain
+{
+    margin: auto;
+    background-color: white;
+    border: 2px solid #292b2c;
+    width: 50%;
+    border-radius: 5px;
+    height: 130%;
+    margin-left: auto;
+    margin-top: 50px;
+    margin-bottom: 10%;
+    padding-bottom: 5px;
+}
+.AdminContainer
+{
+    border-width: 20px;
+    border-radius: 50px;
+    width:70%;
+    margin: auto;
+    display: flex;
+}
+.AdminSidebar
+{
+  flex-basis: 25%;  
+  background-color: blue;  
+}
+.AdminMain
+{
+    height: 100%;
+    flex-basis: 75%;
+    background-color: beige;
+}
+.AdminSidebar div a
+{
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+.AdminSidebar div a:hover
+{
+    background-color: lightskyblue;
+    border-radius: 10px;
+}
+.FormRow
+{
+    min-height: 50px;
+    
+}
+.FormRow input
+{
+    
+    width: 50%;
+    padding: 10px;
+}

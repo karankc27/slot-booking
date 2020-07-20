@@ -1,0 +1,35 @@
+<%-include("header")%>
+ <body>
+   
+   <% if(errorMessage){ %>
+      <div class="alert alert-danger" style="width: 50%;margin: auto;">
+          <strong>Error! </strong> <%=errorMessage%>.
+        </div>
+      <% } %>
+      
+      <% if(successMessage){ %>
+          <div class="alert alert-success" style="width: 50%;margin: auto;">
+              <strong>Congratulations! </strong> <%=successMessage%>.
+            </div>
+          <% } %>
+ <div class="body-container">
+ <div class="LoginMain" style="height: auto;"> 
+ <p><h2> Login</h2></p>  
+ <form action="/login" method="post" style="width: 50%; margin: auto;">
+    <div class="LoginRow">
+     <p><label for="txtUserId">Email Id:</label></p>
+     <p><input type="email" name="email" id="txtUserId" class="form-control" placeholder="Enter Your Email"></p>
+    </div>
+    <div class="LoginRow">
+     <p><label for="txtPwd">Password:</label></p>
+     <p><input type="password" name="password" id="txtPwd" class="form-control" placeholder="Enter Your Password"></p>
+    </div>
+    <div class="LoginRow">
+     <center>   
+     <input type="submit" value="Submit" class="btn btn-primary">
+     <input type="reset" value="Reset" class="btn btn-primary">
+     </center>
+    </div> 
+ </form>
+</div>
+</div>

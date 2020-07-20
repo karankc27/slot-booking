@@ -1,0 +1,46 @@
+<%-include("header")%>
+<body>
+    <% if(errorMessage){ %>
+    <div class="alert alert-danger" style="width: 50%;margin: auto;">
+        <strong>Error! </strong> <%=errorMessage%>.
+      </div>
+    <% } %>
+    
+    <div class="body-container">
+        <div class="LoginMain"> 
+        <p><h2>Register</h2></p>
+          
+        <form action="/signup" method="post" style="width: 50%; margin: auto;">
+           <div class="LoginRow">
+            <p><label for="txtUserId">Name</label></p>
+            <p><input type="text" name="name" id="txtUserId" class="form-control" placeholder="Enter Your Name"></p>
+           </div>
+           <div class="LoginRow">
+            <p><label for="txtUserId">Email Id</label></p>
+            <p><input type="email" name="email" id="txtUserId" class="form-control" placeholder="Enter your Email"></p>
+           </div>
+           <div class="LoginRow">
+            <p><label for="txtUserId">Society Block Number</label></p>
+            <p><input type="number" name="block" id="txtUserId" class="form-control" placeholder="Enter Your Society Block Number"></p>
+           </div>
+           <div class="LoginRow">
+            <p><label for="txtUserId">Society Registration ID</label></p>
+            <p><input type="text" name="registration_id" id="txtUserId" class="form-control" placeholder="Enter Your Society Registration Id"></p>
+           </div>
+    
+           <div class="LoginRow">
+            <p><label for="txtPwd">Password:</label></p>
+            <p><input type="password" name="password" class="form-control" id="txtPwd password" class="form-control" placeholder="Enter Your Password"></p>
+           </div>
+           <br>
+
+           <div class="LoginRow">
+            <center>   
+            <input type="submit" value="Submit" class="btn btn-primary">
+            <input type="reset" value="Reset" class="btn btn-primary">
+            </center>
+           </div> 
+
+        </form>
+       </div>
+       </div>

@@ -1,0 +1,131 @@
+<%-include("header")%>
+<body>
+    <% if(errorMessage || !isLoggedIn){ %>
+        <div class="alert alert-danger" style="width: 50%;margin: auto;">
+            <strong>Error! </strong> <% if(!errorMessage)errorMessage="Please Login to view the contents." %> <%=errorMessage%>.
+          </div>
+        <% } else if(successMessage){ %>
+            <div class="alert alert-success" style="width: 50%;margin: auto;">
+                <strong>Congratulations! </strong> <%=successMessage%>.
+              </div>
+   <% } %>
+   <% if(isLoggedIn){ %>
+   <div class="row table-bordered" style="background-color: beige;margin-top: 2%;">
+    <div class="col-sm-6">
+        <p style="margin-left: 27%;width: 50%;">
+         <button class="btn btn-dark" style="width: 50%;margin: auto;margin-top: 2%;" type="button" data-toggle="collapse" data-target="#collapseTable" aria-expanded="false" aria-controls="collapseTable">
+        Display Bookings
+         </button>
+       </p>   
+      <div class="row">
+        <div class="col-sm-12">
+            
+<table id="collapseTable"  class="collapse table table-hover table-sm table-bordered" style="width: 90%; margin-top: 3%;margin: auto;">
+    <thead>
+       <tr>
+         <th>#</th>
+         <th>Facility</th>
+         <th>Date</th>
+         <th>Time</th>
+         </tr>
+     </thead>
+     <tbody>
+        <% let i=0; if(bookings.length>0) for (let booking of bookings) {  i++;  %>
+       <tr>
+         <th scope="row"><%=i%></th>
+         <td><%=booking.facility%></td>
+         <td><%=booking.date.toString().substring(0, 15) %></td>
+         <td><%=booking.time%></td>
+         </tr>
+         <% } %>
+     </tbody>
+   </table>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6"> 
+        <p style="width:50%;margin-left: 27%;">
+          <button class="btn btn-dark" style="width: 50%;margin: auto;margin-top: 2%;" type="button" data-toggle="collapse" data-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
+         Book a Facility
+          </button>
+        </p>
+        <div class="row">
+            <div class="col-sm-12" >
+            <form action="/book" method="POST" id="collapseForm" class="collapse" style="width:80%;margin:auto;">
+                <div class="form-group row">
+                    <label for="exampleFormControlSelect1">Facility</label>
+                     <select name="facility" style="width: 50%;margin: auto;" class="form-control" id="exampleFormControlSelect1">
+                        <option>Select Facility</option>
+                        <option>Tennis Court</option>
+                        <option>Swimming Pool</option>
+                        <option>Badminton Court</option>
+                        <option>Gym</option>
+                        <option>Club House</option>
+                        <option>Cycle Tracks</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="example-datetime-local-input" class="col-2 col-form-label">Date</label>
+                    <div class="col-10">
+                      <input class="form-control" style="width: 70%;margin: auto;" name="date" type="date" id="example-datetime-local-input" required>
+                    </div>
+                  </div>
+                  
+                <div class="form-group row">
+                    <label for="example-datetime-local-input" class="col-2 col-form-label">Time</label>
+                    <select name="time" style="width: 50%;margin: auto;" class="form-control" id="exampleFormControlSelect1" required>
+                     
+                    <option value="5:00-7:00 A.M.">5:00-7:00 A.M. </option>
+				 <option value="7:00-9:00 A.M.">7:00-9:00 A.M. </option>
+         <option value="9:00-11:00 A.M.">9:00-11:00 A.M.</option>
+         <option value="11:00-1:00 P.M.">11:00-1:00 P.M.</option>
+         <option value="1:00-3:00 P.M.">1:00-3:00 P.M.</option>
+         <option value="3:00-5:00 P.M.">3:00-5:00 P.M.</option>
+         <option value="5:00-7:00 P.M.">5:00-7:00 P.M.</option>
+         <option value="7:00-9:00 P.M.">7:00-9:00 P.M.</option>
+         <option value="9:00-11:00 P.M.">9:00-11:00 P.M.</option>
+                        </select>
+        </div>
+
+                  <div class="form-group row" style="width: 50%;margin: auto;">
+                  <button type="submit" class="btn btn-dark">Confirm Booking</button>
+                </div>
+            </form>    
+    </div>
+  </div>
+</div>
+
+  <% } %>
+</body>
+<script>
+// $(document).ready(function() {
+
+  
+// $('[data-toggle="collapse"]').click(function() {
+//   $(this).toggleClass( "active" );
+//   if ($(this).hasClass("active")) {
+//     $(this).text("Hide Bookings");
+//   } else {
+//     $(this).text("Display Bookings");
+//   }
+// });  
+  
+// // document ready  
+// });
+// $(document).ready(function() {
+
+  
+// $('[data-toggle="collapse"]').click(function() {
+//   $(this).toggleClass( "active" );
+//   if ($(this).hasClass("active")) {
+//     $(this).text("Book Facility");
+//   } else {
+//     $(this).text("Fuck Facility");
+//   }
+// });  
+  
+// // document ready  
+// });
+
+</script>
